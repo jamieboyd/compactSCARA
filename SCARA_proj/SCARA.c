@@ -30,10 +30,10 @@ unsigned char binInterp_getCount (unsigned char * inputData, unsigned char * out
 
 // index =2. inputSize = 6 [0] = index, [1] = pad byte, [2,3] = encoder L1 count, [4,5] = encoder L2 count. no results
 unsigned char binInterp_setMtrs (unsigned char * inputData, unsigned char * outputResults){
-  /*  signed int * mtrPtr = (signed int *) & (inputData [2]);
+    signed int * mtrPtr = (signed int *) & (inputData [2]);
     signed int L1 = *mtrPtr++;
     signed int L2 = *mtrPtr;
-    // motorsPWMset (L1, L2);*/
+    motorsPWMset (L1, L2);*/
     return 0;
 }
 

@@ -1,9 +1,13 @@
-/**
+/*************************************************************************************************
  * main.c
- */
+ * main function for SCARA.
+ * Does hardware initialization, sets up command interpreter, then runs update loop to process commands
+ *
+ *  Author: Jamie Boyd/Matthew Wonneburg
+ *  Created on: March 1, 2022
+ **************************************************************************************************/
 
-#include "SCARA.h"                  //
-
+#include "SCARA.h"
 
 
 int main(void) {
@@ -11,7 +15,7 @@ int main(void) {
     _disable_interrupts();
     /*********Set main clock frequency to 20 MHz *********************************************/
     ucsSelSource(1,1,1,1);
-    if (ucsDcoFreqSet (20, 2, 1)) SCARA_failure();
+    if (ucsDcoFreqSet (20, 2, 1)) SCARA_failure(); // setting clock frequency this high may fail
     //*************** motor control *********************************************/
     timerA0Init(PWMFREQ);        // initialize TimerA0 and port 3 pins for direction selection
     //*************** Quadrature Decoding *********************************************/

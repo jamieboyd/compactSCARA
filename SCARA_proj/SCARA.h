@@ -26,7 +26,6 @@
 
 void SCARA_failure(void);
 
-// index =0. inputSize = 1. no results
 unsigned char binInterp_zeroCount (unsigned char * inputData, unsigned char * outputResults);          // 0
 unsigned char binInterp_getCount (unsigned char * inputData, unsigned char * outputResults);           // 1
 unsigned char binInterp_setMtrs (unsigned char * inputData, unsigned char * outputResults);            // 2

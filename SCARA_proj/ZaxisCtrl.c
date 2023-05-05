@@ -30,7 +30,7 @@ void zAxisInit (void){
 }
 
 /* ***************************************
- * timerA0PwmFreqSet(unsigned int pwmFreq)
+ * zAxisSetSpeed(unsigned int pwmFreq)
  *
  * Finds closest set of divisors to given frequency, given that always set CCR0 to 65535 for max control
  * We always use 20Mhz SMCLK for clock source - could go from 109 Hz down to 5 Hz using 32768 Hz ACLK.
@@ -183,7 +183,7 @@ unsigned int zAxisSetSpeed(unsigned int pwmFreq) {
         }
     }
     TA1CCR1 = (TA1CCR0 + 1)/2;
-    TA1CTL |= TACLR;         // to cleanse the discriminating timer palate
+    TA1CTL |= TACLR;         // to clear the timer
     return rVal;
 }
 

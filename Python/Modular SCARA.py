@@ -23,7 +23,7 @@ def selectPort(portOption):
     pop.grab_release()
     pop.destroy()
     robot = SCARA(portOption.name, SCARA.defaultBAUD)
-    # robot = SCARA( '/dev/' +  portOption.name, SCARA.defaultBaud) for mac
+    # robot = SCARA( '/dev/' +  portOption.name, SCARA.defaultBaud) #for mac
 
 #----------------------- GUI commands -------------------------------
 

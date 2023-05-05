@@ -1,5 +1,5 @@
 /*************************************************************************************************
- * liUART1A.c
+ * libUART1A.c
  * - C implementation or source file for MSP430 usci UART A1
  * Has functions for sending/receiving from strings (null terminated character arrays)
  * and buffers (character arrays with specified lengths)
@@ -26,7 +26,6 @@ txIntFunc txIntFuncPtr = NULL;
 /************************************************************************************
 * Function: usciA1UartInit
 * - configures UCA1 UART for 115200 baud, no parity, 8 bit data, LSB first, one stop bit
-* - assumes SMCLK = 2^20 Hz
 * Arguments: none
 * return: nothing
 * Author: Greg Scutt
@@ -159,7 +158,6 @@ void usciA1UartSbyte (signed char theByte){
 /******************** usciA1UartTxLongInt **********************************************
 * - writes a string representation of the decimal value of a long integer by doing the string
 * conversion into a buffer and then calling usciA1UartTxBuffer.
-* Arguments:1
 * argument1: cntVal - a signed long integer to be transmitted
 * return: nothing
 * Author: Jamie Boyd
@@ -182,7 +180,6 @@ void usciA1UartTxLongInt (signed long cntVal){
 /************************************************************************************
 * Function: usciA1UartGets
 * - receive a string entered from the console and store it into an array pointed to by rxString.
-* Arguments:1
 * argument1: rxString - unsigned char pointer to text buffer to put received characters into
 * return:  pointer to rxString or NULL if unsuccessful (too many characters entered)
 * Author: Jamie Boyd
