@@ -92,11 +92,11 @@ unsigned char binInterp_zAxisSetLowerHere(unsigned char * inputData, unsigned ch
 }
 
 
-// index = 11. input size = 4 [0] = index, [1] = pad byte, [2,3] = set speed.  Results [0] = numBytes =4, [1] = errCode = 0, [2,3] = actual speed
+// index = 11. input size = 4 [0] = index, [1] = pad byte, [2,3] = set speed. Results [0] = numBytes =4, [1] = errCode = 0, [2,3] = actual speed
 unsigned char binInterp_zAxisSetSpeed (unsigned char * inputData, unsigned char * outputResults){
     unsigned int * zPtr = (unsigned int *) & (inputData [2]);
     unsigned int setSpeed = zAxisSetSpeed (* zPtr);
-    outputResults [0] = 4;   // the number of bytes when sending results, including this one which is not sent
+    outputResults [0] = 4;   // the number of bytes of results, including this one which is not sent
     outputResults [1] = 0;   // no errors here, code for no errors
     zPtr = ((unsigned int *)&outputResults[2]);
     *zPtr = setSpeed;
@@ -139,7 +139,6 @@ unsigned char binInterp_moveJ  (unsigned char * inputData, unsigned char * outpu
     scaraStateEnd.scaraPos.theta1 = endAng1*PUL_PER_DEG_N70;
     scaraStateEnd.scaraPos.theta2 = endAng2*PUL_PER_DEG_N70;
     sendMoveJ(scaraStateEnd);
-
     return 0;
 }
 

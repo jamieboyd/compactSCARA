@@ -366,7 +366,7 @@ int moveScaraL(SCARA_ROBOT* scaraState, LINE_DATA newLine){
     // calculate line displacements
     deltaX = newLine.pB.x - newLine.pA.x;
     deltaY = newLine.pB.y - newLine.pA.y;
-    deltaD = (sqrt(pow(deltaX, 2) + pow(deltaY, 2))); // pythagreom theorum for line distance in x,y
+    deltaD = (sqrt(pow(deltaX, 2) + pow(deltaY, 2))); // Pythagorean theorem for line distance in x,y
 
     timeForMove = (sqrt((abs(deltaD)*2*PI)/A_MAX_LINEAR));
     w = (2*(PI))/timeForMove;

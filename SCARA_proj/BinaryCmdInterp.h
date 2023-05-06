@@ -7,7 +7,7 @@
  *      Facilitates interaction with a host system, using binary data over the serial port.
  *      The micro-controller and the host system must use the same codes for commands, and
  *      use the same data types, all programmed in advance.
- *      Commands sent to the micro-controller are represented as an array of structures
+ *      Commands to be run by the micro-controller are represented as an array of structures
  *      containing a function pointer and the number of characters of data the function
  *      receives as input over the serial port. The command's position in the array (as an unsigned byte)
  *      is the first character (sometimes the only) byte that is sent as part of a command. Every
